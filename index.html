@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./css/styles.css">
+  <script defer src="./js/main.js"></script>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Expenses chart component</title>
+
+  
+</head>
+<body>
+  <main class="chart flex column ">
+    <div class="chart__summary-container flex space-between">
+      <div class="summary-container__left-col flex column">
+        <h1 class="chart__main-heading">My balance</h1>
+        <p class="chart__balance">$921.48</p>
+      </div>
+      <div class="summary-container__right-col flex column">
+        <img src="./assets/images/logo.svg" alt="">
+      </div>
+    </div>
+    <div class="chart__content">
+      <div class="content__heading-container">
+        <h2 class="content__heading">Spending - Last 7 days</h2>
+      </div>
+      <div id="chart-container" class="content__chart-container">
+
+      </div>
+      <div class="hr"></div>
+      <div class="content__balance-container flex space-between">
+        <div class="balance-container__left-col flex column">
+          <h3 class="content__balance-heading">Total this month</h3>
+          <p class="content__month-balance">$478.33</p>
+        </div>
+        <div class="balance-container__right-col flex column">
+          <p class="content__percentage">+2.4%</p>
+          <p class="content__percentage-subtitle">from last month</p>
+
+        </div>
+
+        
+      </div>
+    </div>
+
+  </main>
+
+</body>
+</html>

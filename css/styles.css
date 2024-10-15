@@ -1,0 +1,255 @@
+:root {
+
+    /* Primary */
+
+    --soft-red: hsl(10, 79%, 65%);
+    --yan: hsl(186, 34%, 60%);
+
+    /* Neutral */
+
+    --dark-brown: hsl(25, 47%, 15%);
+    --medium-brown: hsl(28, 10%, 53%);
+    --cream: hsl(27, 66%, 92%);
+    --very-pale-orange: hsl(33, 100%, 98%);
+
+    /* Custome */
+
+    --active-soft-red: hsl(10, 79%, 80%);
+    --active-yan: hsl(186, 34%, 75%);
+}
+
+/* Font weights, 400 and 700 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.125rem;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    background-color: var(--cream);
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+}
+
+/* Utility Classes */
+
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.hr {
+    border-top: 1px solid var(--cream);
+    margin-block: 1rem;
+
+}
+
+
+/* Component Classes */
+
+/* Chart */
+
+.chart {
+    gap: 20px;
+    min-width: 30rem;
+}
+
+/* Chart Summary Section */
+
+.chart__summary-container {
+    padding: 2rem;
+    background-color: var(--soft-red);
+    border-radius: 20px;
+}
+
+.summary-container__left-col {
+    gap: 10px;
+}
+
+.summary-container__right-col {
+    justify-content: center;
+}
+
+.chart__main-heading {
+    font-size: 1rem;
+    color: var(--very-pale-orange);
+}
+
+.chart__balance {
+    font-size: 2rem;
+    color: var(--very-pale-orange);
+    font-weight: 700;
+}
+
+/* Chart Content Section */
+
+.chart__content {
+    background-color: var(--very-pale-orange);
+    border-radius: 20px;
+    padding: 2rem;
+}
+
+.content__chart-container {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+    min-height: 12rem;
+
+}
+
+.chart-bar-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+}
+
+.chart-bar {
+    position: relative;
+    background-color: var(--soft-red);
+    border-radius: 5px;
+    transition: height 0.3s ease-in;
+    cursor: pointer;
+}
+
+.highest-value {
+    background-color: var(--yan);
+}
+
+.normal-value {
+    background-color: var(--soft-red);
+}
+
+.active.highest-value {
+    background-color: var(--active-yan);
+}
+
+.active.normal-value {
+    background-color: var(--active-soft-red);
+}
+
+.chart-label {
+    text-align: center;
+    color: var(--medium-brown);
+}
+
+.chart-value {
+    display: none;
+    position: absolute;
+    top: -3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    border-radius: 5px;
+    color: var(--cream);
+    padding-block: 0.5rem;
+    padding-inline: 0.5rem;
+    font-weight: 700;
+    user-select: none;
+    z-index: 100;
+}
+
+.active .chart-value {
+    display: block;
+}
+
+.content__heading {
+    font-size: 1.5rem;
+}
+
+.content__balance-container {
+    gap: 0.5rem;
+}
+
+.content__balance-heading {
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: var(--medium-brown);
+}
+
+.content__month-balance {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.content__percentage {
+    font-weight: 700;
+}
+
+.content__percentage-subtitle {
+    color: var(--medium-brown);
+    text-align: right;
+}
+
+.balance-container__right-col {
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+@media(hover:hover) {
+    .highest-value:hover {
+        background-color: var(--active-yan);
+    }
+    
+    .normal-value:hover {
+        background-color: var(--active-soft-red);
+    }
+}
+
+@media(hover:none) {
+
+    .highest-value:active {
+        background-color: var(--active-yan);
+    }
+    
+    .normal-value:active {
+        background-color: var(--active-soft-red);
+    }
+
+}
+
+@media only screen and (max-width: 767px) {
+
+    body {
+        display: block;
+        padding-top: 4rem;
+        padding-bottom: 2rem;
+    }
+
+    .chart {
+        width: 100%;
+        min-width: 300px;
+    }
+
+    .chart-label {
+        font-size: 1rem;
+    }
+
+    .content__chart-container {
+        gap: 0.75rem;
+    }
+
+    .content__balance-heading {
+        font-size: 1rem;
+    }
+
+    .content__percentage-subtitle {
+        font-size: 1rem;
+        
+    }
+
+}
